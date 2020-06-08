@@ -6,9 +6,9 @@
     <div class="event-card">
       <span class="event-time">@{{ event.time }} on {{ event.date }}</span>
       <h4 class="event-title">{{ event.title }}</h4>
-      <span class="event-attending"
-        >{{ event.attendees.length }} Attending</span
-      >
+      <p class="event-attending">
+        <BaseIcon name="users"></BaseIcon>{{ event.attendees.length }} Attending
+      </p>
     </div>
   </router-link>
 </template>
@@ -56,8 +56,11 @@ export default {
 }
 
 .event-card .event-attending {
+  margin: 0;
+  display: flex;
+  align-items: center;
   font-size: 0.75rem;
-  color: #c7c7c7;
+  color: #e2e8f0;
 }
 
 .event-link {

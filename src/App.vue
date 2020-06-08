@@ -21,8 +21,8 @@ html {
 }
 
 body {
-  background-color: #181818;
-  color: #dfdfdf;
+  background-color: #1a202c;
+  color: #f7fafc;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin: 0;

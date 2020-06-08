@@ -2,7 +2,7 @@
   <header id="navbar">
     <div class="container">
       <div class="navbar-brand">
-        RealWorldEvent
+        VueEvent
       </div>
       <div class="nav-links">
         <router-link exact :to="{ name: 'event-list' }" class="nav-link"
@@ -28,11 +28,11 @@ export default {}
 }
 
 header#navbar {
-  background-color: #50ff8b;
+  background-color: #38ef7d;
 }
 
 header#navbar .navbar-brand {
-  color: #181818;
+  color: #1a202c;
   font-size: 1.2rem;
   font-weight: bolder;
   text-shadow: 0 2 4px rgba(255, 255, 255, 0.16);
@@ -40,12 +40,12 @@ header#navbar .navbar-brand {
 
 a.nav-link {
   text-decoration: none;
-  color: #181818;
+  color: #2d3748;
   margin-left: 1rem;
 }
 
 a.router-link-active {
-  color: rgb(0, 90, 20);
+  color: #1a202c;
   font-weight: bold;
 }
 </style>
