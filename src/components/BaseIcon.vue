@@ -3,6 +3,7 @@
     <svg class="icon" :width="width" :height="height">
       <use v-bind="{ 'xlink:href': '/feather-sprite.svg#' + name }" />
     </svg>
+    <slot></slot>
   </div>
 </template>
 
@@ -24,13 +25,17 @@ export default {
 
 <style scoped>
 .icon-wrapper {
-  margin-right: 0.5rem;
   display: inline-flex;
   align-items: center;
 }
 
 .icon {
   color: #f0f0f0;
-  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  margin-right: 0.5rem;
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <NavBar></NavBar>
-    <router-view />
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -16,6 +18,10 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -36,5 +42,11 @@ h1 {
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 85%;
+  }
 }
 </style>
