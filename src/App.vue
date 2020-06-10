@@ -2,7 +2,7 @@
 	<div id="app">
 		<NavBar></NavBar>
 		<div class="container">
-			<router-view />
+			<router-view :key="$route.fullPath" />
 		</div>
 	</div>
 </template>
@@ -20,6 +20,11 @@ export default {
 <style>
 * {
 	box-sizing: border-box;
+}
+
+a {
+	color: white;
+	text-decoration: none;
 }
 
 html {
