@@ -17,7 +17,11 @@
 		<div class="event-attendees">
 			<h3>
 				Attendees
-				<span class="badge">{{ event.attendees ? event.attendees.length : 0 }}</span>
+				<span class="badge">
+					{{
+					event.attendees ? event.attendees.length : 0
+					}}
+				</span>
 			</h3>
 			<ul>
 				<li v-for="(attendee, index) in event.attendees" :key="index">
@@ -29,20 +33,14 @@
 </template>
 
 <script>
-import EventServices from '@/services/EventServices'
+import { mapState } from 'vuex'
 
 export default {
 	props: ['id'],
-	data() {
-		return {
-			event: {}
-		}
-	},
 	created() {
-		EventServices.getEvent(this.id)
-			.then(response => (this.event = response.data))
-			.catch(error => console.error(`There was an error ${error}`))
-	}
+		this.$store.dispatch('fetchEvent', this.id)
+	},
+	computed: mapState(['event'])
 }
 </script>
 
