@@ -71,6 +71,42 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 196787,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "title": "Mabar Club",
+      "description": "Mabar free fire",
+      "location": "Jakarta Selatan",
+      "date": "2020-06-29T17:17:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 155501,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "title": "Workshop VueJS",
+      "description": "Learning together about vuejs",
+      "location": "Bogor",
+      "date": "2020-06-28T18:05:00.000Z",
+      "time": "10:00",
+      "attendees": []
     }
   ]
 }
