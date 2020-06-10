@@ -56,12 +56,24 @@ export default new Vuex.Store({
 					console.error(`There was an error ${error.response}`)
 				)
 		},
-		fetchEvent({ commit }, id) {
-			EventServices.getEvent(id)
-				.then(response => commit('SET_EVENT', response.data))
-				.catch(error => console.error(`There was an error ${error}`))
+		fetchEvent({ commit, getters }, id) {
+			const event = getters.getEventById(id)
+
+			if (event) {
+				commit('SET_EVENT', event)
+			} else {
+				EventServices.getEvent(id)
+					.then(response => commit('SET_EVENT', response.data))
+					.catch(error =>
+						console.error(`There was an error ${error}`)
+					)
+			}
 		}
 	},
-	getters: {},
+	getters: {
+		getEventById: state => id => {
+			return state.events.find(event => event.id == id)
+		}
+	},
 	modules: {}
 })
