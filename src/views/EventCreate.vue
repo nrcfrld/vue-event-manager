@@ -39,11 +39,7 @@
 				<label for="time">time</label>
 				<select id="time" v-model="event.time">
 					<option value>--Select time--</option>
-					<option v-for="(time, index) in times" :key="index">
-						{{
-						time
-						}}
-					</option>
+					<option v-for="(time, index) in times" :key="index">{{ time }}</option>
 				</select>
 			</div>
 			<button type="submit">Create Event</button>
