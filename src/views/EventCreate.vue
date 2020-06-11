@@ -39,7 +39,11 @@
 				<label for="time">time</label>
 				<select id="time" v-model="event.time">
 					<option value>--Select time--</option>
-					<option v-for="(time, index) in times" :key="index">{{ time }}</option>
+					<option v-for="(time, index) in times" :key="index">
+						{{
+						time
+						}}
+					</option>
 				</select>
 			</div>
 			<button type="submit">Create Event</button>
@@ -66,7 +70,7 @@ export default {
 	methods: {
 		createEvent() {
 			this.$store
-				.dispatch('createEvent', this.event)
+				.dispatch('event/createEvent', this.event)
 				.then(() => {
 					this.$router.push({
 						name: 'event-show',
@@ -81,7 +85,7 @@ export default {
 				)
 		},
 		createFreshEventObject() {
-			const user = this.$store.state.user
+			const user = this.$store.state.user.user
 			const id = Math.floor(Math.random() * 1000000)
 
 			return {
