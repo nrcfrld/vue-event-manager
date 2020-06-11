@@ -2,7 +2,9 @@
 	<div class="event-show">
 		<div class="event-time">@{{ event.time }} on {{ event.date }}</div>
 		<h2 class="event-title">{{ event.title }}</h2>
-		<h4 class="event-organizer">Organized by {{ event.organizer ? event.organizer.name : '' }}</h4>
+		<h4 class="event-organizer">
+			Organized by {{ event.organizer ? event.organizer.name : '' }}
+		</h4>
 		<h4 class="event-category">Category : {{ event.category }}</h4>
 		<div class="location">
 			<h3 class="location-header">
@@ -17,7 +19,9 @@
 		<div class="event-attendees">
 			<h3>
 				Attendees
-				<span class="badge">{{ event.attendees ? event.attendees.length : 0 }}</span>
+				<span class="badge">{{
+					event.attendees ? event.attendees.length : 0
+				}}</span>
 			</h3>
 			<ul>
 				<li v-for="(attendee, index) in event.attendees" :key="index">
@@ -29,17 +33,22 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
+import NProgress from 'nprogress'
+import store from '@/store'
 
 export default {
 	props: ['id'],
-	created() {
-		this.fetchEvent(this.id)
+	beforeRouteEnter(routeTo, routeFrom, next) {
+		NProgress.start()
+		store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
+			NProgress.done()
+			next()
+		})
 	},
 	computed: mapState({
 		event: state => state.event.event
-	}),
-	methods: mapActions('event', ['fetchEvent'])
+	})
 }
 </script>
 

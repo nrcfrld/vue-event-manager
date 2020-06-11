@@ -1,11 +1,20 @@
-# real-world-vue
+# Vue Event Manager
 
-Learning VueJS with Vue-cli.
+Learning VueJS with Vue-CLI and Vuex by creating event manager.
+
+Library used :
+- Axios
+- NProgress
 
 ## Project setup
 
+To installing all dependencies run this command :
 ```
 npm install
+```
+If you haven't installed json-server, you should run this command :
+```
+npm install -g json-server
 ```
 
 ### Compiles and hot-reloads for development
