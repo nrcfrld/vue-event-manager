@@ -109,25 +109,21 @@
       "attendees": []
     },
     {
-      "id": 302347,
+      "id": 610324,
       "user": {
-        "user": {
-          "id": "abc123",
-          "name": "Enrico"
-        }
+        "id": "abc123",
+        "name": "Enrico"
       },
-      "category": "education",
+      "category": "community",
       "organizer": {
-        "user": {
-          "id": "abc123",
-          "name": "Enrico"
-        }
+        "id": "abc123",
+        "name": "Enrico"
       },
-      "title": "Bootcamp Web Developer",
-      "description": "Belajar web programming dari dasar",
+      "title": "Mabar Club",
+      "description": "Mabar Pri Payer",
       "location": "Bandung",
-      "date": "2020-07-07T12:33:00.000Z",
-      "time": "8:00",
+      "date": "2020-06-30T15:00:00.000Z",
+      "time": "18:00",
       "attendees": []
     }
   ]
