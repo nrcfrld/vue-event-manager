@@ -125,6 +125,24 @@
       "date": "2020-06-30T15:00:00.000Z",
       "time": "18:00",
       "attendees": []
+    },
+    {
+      "id": 781372,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "title": "Bambang",
+      "description": "adaad",
+      "location": "awdada",
+      "date": "2020-06-27T16:32:00.000Z",
+      "time": "14:00",
+      "attendees": []
     }
   ]
 }
