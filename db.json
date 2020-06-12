@@ -143,6 +143,24 @@
       "date": "2020-06-27T16:32:00.000Z",
       "time": "14:00",
       "attendees": []
+    },
+    {
+      "id": 440594,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "title": "Belajar Bareng",
+      "description": "Hello World",
+      "location": "Jakarta",
+      "date": "2020-06-26T15:51:00.000Z",
+      "time": "15:00",
+      "attendees": []
     }
   ]
 }

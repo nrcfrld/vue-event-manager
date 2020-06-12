@@ -1,62 +1,71 @@
 <template>
-	<div id="app">
-		<NavBar></NavBar>
-		<NotificationContainer></NotificationContainer>
-		<div id="content">
-			<div class="container">
-				<router-view :key="$route.fullPath" />
-			</div>
-		</div>
-	</div>
+  <div id="app">
+    <NavBar></NavBar>
+    <NotificationContainer></NotificationContainer>
+    <div id="content">
+      <div class="container">
+        <router-view :key="$route.fullPath" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
-import NotificationContainer from '@/components/NotificationContainer.vue'
+import NavBar from '@/components/NavBar.vue';
+import NotificationContainer from '@/components/NotificationContainer.vue';
 
 export default {
-	components: {
-		NavBar,
-		NotificationContainer
-	}
-}
+  components: {
+    NavBar,
+    NotificationContainer
+  }
+};
 </script>
 
 <style>
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 html {
-	-webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-	background-color: #1a202c;
-	color: #f7fafc;
-	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	margin: 0;
-	padding: 0;
+  background-color: #1a202c;
+  color: #f7fafc;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-	font-size: 3rem;
+  font-size: 3rem;
 }
 
 .container {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#nprogress .bar {
+  background-color: white !important;
+  height: 3px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #fff, 0 0 5px #fff !important;
 }
 
 @media (max-width: 768px) {
-	.container {
-		width: 85%;
-	}
+  .container {
+    width: 85%;
+  }
 }
 </style>

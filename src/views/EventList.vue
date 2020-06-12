@@ -1,52 +1,76 @@
 <template>
-	<div>
-		<h1>Event Listing for {{ user.user.name }}</h1>
-		<EventCard v-for="event in event.events" :key="event.id" :event="event"></EventCard>
-		<template v-if="page != 1">
-			<router-link :to="{ name: 'event-list', query: { page: page - 1 } }" rel="prev">Prev Page</router-link>
-			<span v-if="hasNextPage" class="border-line">|</span>
-		</template>
-		<router-link
-			v-if="hasNextPage"
-			:to="{ name: 'event-list', query: { page: page + 1 } }"
-			rel="prev"
-		>Next Page</router-link>
-	</div>
+  <div>
+    <h1>Event Listing for {{ user.user.name }}</h1>
+    <EventCard
+      v-for="event in event.events"
+      :key="event.id"
+      :event="event"
+    ></EventCard>
+    <template v-if="page != 1">
+      <router-link
+        :to="{ name: 'event-list', query: { page: page - 1 } }"
+        rel="prev"
+        >Prev Page</router-link
+      >
+      <span v-if="hasNextPage" class="border-line">|</span>
+    </template>
+    <router-link
+      v-if="hasNextPage"
+      :to="{ name: 'event-list', query: { page: page + 1 } }"
+      rel="prev"
+      >Next Page</router-link
+    >
+  </div>
 </template>
 
 <script>
-import EventCard from '@/components/EventCard.vue'
-import { mapState } from 'vuex'
-export default {
-	components: {
-		EventCard
-	},
-	created() {
-		this.perPage = 3 // Setting perPage here and not in data means it won't be reactive.
-		// We don't need it to be reactive, and this way our component has access to it.
+import EventCard from '@/components/EventCard.vue';
+import { mapState } from 'vuex';
+import store from '@/store';
 
-		this.$store.dispatch('event/fetchEvents', {
-			perPage: this.perPage,
-			page: this.page
-		})
-	},
-	computed: {
-		page() {
-			return parseInt(this.$route.query.page || 1)
-		},
-		hasNextPage() {
-			return this.event.eventsTotal > this.perPage * this.page
-		},
-		...mapState(['event', 'user'])
-	}
+function getPageEvents(routeTo, next) {
+  const currentPage = parseInt(routeTo.query.page || 1);
+
+  store
+    .dispatch('event/fetchEvents', {
+      page: currentPage
+    })
+    .then(() => {
+      routeTo.params.page = currentPage;
+      next();
+    });
 }
+
+export default {
+  props: {
+    page: {
+      type: Number,
+      required: true
+    }
+  },
+  components: {
+    EventCard
+  },
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    getPageEvents(routeTo, next);
+  },
+  beforeRouteUpdate(routeTo, routeFrom, next) {
+    getPageEvents(routeTo, next);
+  },
+  computed: {
+    hasNextPage() {
+      return this.event.eventsTotal > this.event.perPage * this.page;
+    },
+    ...mapState(['event', 'user'])
+  }
+};
 </script>
 
 <style scoped>
 .border-line {
-	margin: 0 0.25rem;
+  margin: 0 0.25rem;
 }
 a:hover {
-	color: #86ffaf;
+  color: #86ffaf;
 }
 </style>
