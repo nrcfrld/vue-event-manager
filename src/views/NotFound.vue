@@ -1,10 +1,21 @@
 <template>
   <div>
     <h1>Oops!</h1>
-    <p>The page that you are looking for is not here.</p>
+    <p>The {{ resource }} that you are looking for is not here.</p>
     <router-link :to="{ name: 'event-list' }">Go to homepage</router-link>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    resource: {
+      type: String,
+      required: true
+    }
+  }
+};
+</script>
 
 <style scoped>
 a {

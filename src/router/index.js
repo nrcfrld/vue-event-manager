@@ -29,15 +29,26 @@ const routes = [
       import(/* webpackChunkName: "about" */ '../views/EventShow.vue'),
     props: true,
     beforeEnter(routeTo, routeFrom, next) {
-      store.dispatch('event/fetchEvent', routeTo.params.id).then(event => {
-        routeTo.params.event = event;
-        next();
-      });
+      store
+        .dispatch('event/fetchEvent', routeTo.params.id)
+        .then(event => {
+          routeTo.params.event = event;
+          next();
+        })
+        .catch(() =>
+          next({ name: 'not-found', params: { resource: 'event' } })
+        );
     }
   },
   {
+    path: '/not-found',
+    name: 'not-found',
+    component: () => import('../views/NotFound.vue'),
+    props: true
+  },
+  {
     path: '*',
-    component: () => import('../views/NotFound.vue')
+    redirect: { name: 'not-found', params: { resource: 'page' } }
   }
 ];
 
