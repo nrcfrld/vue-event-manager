@@ -35,9 +35,13 @@ const routes = [
           routeTo.params.event = event;
           next();
         })
-        .catch(() =>
-          next({ name: 'not-found', params: { resource: 'event' } })
-        );
+        .catch(error => {
+          if (error.response && error.response.status == 404) {
+            next({ name: 'not-found', params: { resource: 'event' } });
+          } else {
+            next({ name: 'network-issue' });
+          }
+        });
     }
   },
   {
@@ -45,6 +49,11 @@ const routes = [
     name: 'not-found',
     component: () => import('../views/NotFound.vue'),
     props: true
+  },
+  {
+    path: '/network-issue',
+    name: 'network-issue',
+    component: () => import('../views/NetworkIssue.vue')
   },
   {
     path: '*',
