@@ -2,45 +2,37 @@
 	<div id="event-create">
 		<h1>Create an Event</h1>
 		<form @submit.prevent="createEvent">
-			<div class="form-group">
-				<label for="category">Select a category</label>
-				<select id="category" v-model="event.category">
-					<option value>--Select--</option>
-					<option v-for="(category, index) in categories" :key="index">
-						{{ category }}
-					</option>
-				</select>
-			</div>
+			<BaseSelect
+				label="Category"
+				id="category"
+				:options="categories"
+				v-model="event.category"
+			></BaseSelect>
 			<h3>Name & describe your event</h3>
-			<div class="form-group">
-				<label for="title">Title</label>
-				<input
-					id="title"
-					type="text"
-					placeholder="Add an event title"
-					v-model="event.title"
-				/>
-			</div>
-			<div class="form-group">
-				<label for="description">Description</label>
-				<input
-					type="text"
-					id="description"
-					placeholder="Add an event description"
-					v-model="event.description"
-				/>
-			</div>
+			<BaseInput
+				id="title"
+				label="Title"
+				v-model="event.title"
+				type="text"
+				placeholder="Add an event title"
+			></BaseInput>
+
+			<BaseInput
+				id="description"
+				label="description"
+				v-model="event.description"
+				type="text"
+				placeholder="Add an event description"
+			></BaseInput>
 
 			<h3>Where is your event ?</h3>
-			<div class="form-group">
-				<label for="location">Location</label>
-				<input
-					id="location"
-					type="text"
-					placeholder="Add an event location"
-					v-model="event.location"
-				/>
-			</div>
+			<BaseInput
+				id="location"
+				label="location"
+				v-model="event.location"
+				type="text"
+				placeholder="Add an event location"
+			></BaseInput>
 
 			<h3>When is your event ?</h3>
 			<div class="form-group">
@@ -50,15 +42,12 @@
 					v-model="event.date"
 				></Datepicker>
 			</div>
-			<div class="form-group">
-				<label for="time">time</label>
-				<select id="time" v-model="event.time">
-					<option value>--Select time--</option>
-					<option v-for="(time, index) in times" :key="index">{{
-						time
-					}}</option>
-				</select>
-			</div>
+			<BaseSelect
+				label="Time"
+				id="time"
+				:options="times"
+				v-model="event.time"
+			></BaseSelect>
 			<button type="submit">Create Event</button>
 		</form>
 	</div>
@@ -145,26 +134,6 @@ form {
 
 #event-create form {
 	text-align: left;
-}
-
-#event-create .form-group {
-	margin-bottom: 1.5rem;
-}
-
-#event-create .form-group label {
-	display: block;
-}
-
-#event-create >>> .form-group input,
-#event-create .form-group select {
-	background-color: white;
-	outline: none;
-	border: none;
-	display: block;
-	width: 100%;
-	padding: 0.75rem 0.75rem;
-	border-radius: 0.25rem;
-	margin-top: 0.25rem;
 }
 
 button[type='submit'] {
