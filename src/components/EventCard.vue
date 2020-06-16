@@ -4,7 +4,9 @@
     :to="{ name: 'event-show', params: { id: event.id } }"
   >
     <div class="event-card">
-      <span class="event-time">@{{ event.time }} on {{ event.date }}</span>
+      <span class="event-time"
+        >@{{ event.time }} on {{ event.date | date }}</span
+      >
       <h4 class="event-title">{{ event.title }}</h4>
       <div class="event-attending">
         <BaseIcon name="users">{{ event.attendees.length }} Attending</BaseIcon>
@@ -18,7 +20,7 @@ export default {
   props: {
     event: Object
   }
-}
+};
 </script>
 
 <style scoped>

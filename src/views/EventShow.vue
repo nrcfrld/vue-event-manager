@@ -1,14 +1,14 @@
 <template>
   <div class="event-show">
-    <div class="event-time">@{{ event.time }} on {{ event.date }}</div>
+    <div class="event-time">@{{ event.time }} on {{ event.date | date }}</div>
     <h2 class="event-title">{{ event.title }}</h2>
-    <h4 class="event-organizer">Organized by {{ event.organizer }}</h4>
+    <h4 class="event-organizer">
+      Organized by {{ event.organizer ? event.organizer.name : '' }}
+    </h4>
     <h4 class="event-category">Category : {{ event.category }}</h4>
     <div class="location">
-      <h3 class="location-header"><BaseIcon name="map"></BaseIcon> Location</h3>
-      <div class="location-detail">
-        {{ event.location }}
-      </div>
+      <h3 class="location-header"><BaseIcon name="map"></BaseIcon>Location</h3>
+      <div class="location-detail">{{ event.location }}</div>
     </div>
     <div class="event-details">
       <h3>Event Details</h3>
@@ -31,21 +31,14 @@
 </template>
 
 <script>
-import EventServices from '@/services/EventServices'
-
 export default {
-  props: ['id'],
-  data() {
-    return {
-      event: {}
+  props: {
+    event: {
+      type: Object,
+      required: true
     }
-  },
-  created() {
-    EventServices.getEvent(this.id)
-      .then(response => (this.event = response.data))
-      .catch(error => console.error(`There was an error ${error}`))
   }
-}
+};
 </script>
 
 <style>

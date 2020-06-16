@@ -71,6 +71,114 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 196787,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "title": "Mabar Club",
+      "description": "Mabar free fire",
+      "location": "Jakarta Selatan",
+      "date": "2020-06-29T17:17:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 155501,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico Feraldo"
+      },
+      "title": "Workshop VueJS",
+      "description": "Learning together about vuejs",
+      "location": "Bogor",
+      "date": "2020-06-28T18:05:00.000Z",
+      "time": "10:00",
+      "attendees": []
+    },
+    {
+      "id": 610324,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "title": "Mabar Club",
+      "description": "Mabar Pri Payer",
+      "location": "Bandung",
+      "date": "2020-06-30T15:00:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 781372,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "title": "Bambang",
+      "description": "adaad",
+      "location": "awdada",
+      "date": "2020-06-27T16:32:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 440594,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "title": "Belajar Bareng",
+      "description": "Hello World",
+      "location": "Jakarta",
+      "date": "2020-06-26T15:51:00.000Z",
+      "time": "15:00",
+      "attendees": []
+    },
+    {
+      "id": 759302,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "title": "Go Green",
+      "description": "Menanam pohon bersama",
+      "location": "Bogor",
+      "date": "2020-06-04T20:56:00.000Z",
+      "time": "17:00",
+      "attendees": []
     }
   ]
 }
