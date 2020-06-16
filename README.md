@@ -22,6 +22,10 @@ If you haven't installed json-server, you should run this command :
 npm install -g json-server
 ```
 
+### Running mockup fake API with json-server
+```
+json-server --watch db.json
+```
 ### Compiles and hot-reloads for development
 
 ```
