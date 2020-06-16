@@ -1,6 +1,6 @@
 <template>
   <div class="event-show">
-    <div class="event-time">@{{ event.time }} on {{ event.date }}</div>
+    <div class="event-time">@{{ event.time }} on {{ event.date | date }}</div>
     <h2 class="event-title">{{ event.title }}</h2>
     <h4 class="event-organizer">
       Organized by {{ event.organizer ? event.organizer.name : '' }}

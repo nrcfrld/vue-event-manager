@@ -161,6 +161,24 @@
       "date": "2020-06-26T15:51:00.000Z",
       "time": "15:00",
       "attendees": []
+    },
+    {
+      "id": 759302,
+      "user": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Enrico"
+      },
+      "title": "Go Green",
+      "description": "Menanam pohon bersama",
+      "location": "Bogor",
+      "date": "2020-06-04T20:56:00.000Z",
+      "time": "17:00",
+      "attendees": []
     }
   ]
 }
