@@ -7,20 +7,20 @@ import * as notification from '@/store/modules/notification.js';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    categories: [
-      'sustainability',
-      'nature',
-      'animal welfare',
-      'housing',
-      'education',
-      'food',
-      'community'
-    ]
-  },
-  modules: {
-    user,
-    event,
-    notification
-  }
+	state: {
+		categories: [
+			'sustainability',
+			'nature',
+			'animal welfare',
+			'housing',
+			'education',
+			'food',
+			'community'
+		]
+	},
+	modules: {
+		user,
+		event,
+		notification
+	}
 });

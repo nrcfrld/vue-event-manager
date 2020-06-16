@@ -1,5 +1,4 @@
 module.exports = {
-  singleQuote: true,
-  arrowParens: 'avoid',
-  useTabs: true
+	singleQuote: true,
+	arrowParens: 'avoid'
 };
