@@ -1,10 +1,15 @@
 # Vue Event Manager
 
-Learning VueJS with Vue-CLI and Vuex by creating event manager.
+Learning VueJS by creating event manager.
 
 Library used :
+- Vuex
+- Vue Router
 - Axios
 - NProgress
+- Vuelidate
+- Vuejs-datepicker
+- etc
 
 ## Project setup
 
