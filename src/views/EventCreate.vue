@@ -11,7 +11,9 @@
         :class="{ error: $v.event.category.$error }"
       ></BaseSelect>
       <template v-if="$v.event.category.$error">
-        <small v-if="!$v.event.category.required" class="error-message">Category is required</small>
+        <small v-if="!$v.event.category.required" class="error-message"
+          >Category is required</small
+        >
       </template>
       <h3>Name & describe your event</h3>
       <BaseInput
@@ -25,7 +27,9 @@
       ></BaseInput>
 
       <template v-if="$v.event.title.$error">
-        <small v-if="!$v.event.title.required" class="error-message">Title is required</small>
+        <small v-if="!$v.event.title.required" class="error-message"
+          >Title is required</small
+        >
       </template>
       <BaseInput
         id="description"
@@ -37,7 +41,9 @@
         :class="{ error: $v.event.description.$error }"
       ></BaseInput>
       <template v-if="$v.event.description.$error">
-        <small v-if="!$v.event.description.required" class="error-message">Description is required</small>
+        <small v-if="!$v.event.description.required" class="error-message"
+          >Description is required</small
+        >
       </template>
       <h3>Where is your event ?</h3>
       <BaseInput
@@ -50,7 +56,9 @@
         :class="{ error: $v.event.location.$error }"
       ></BaseInput>
       <template v-if="$v.event.location.$error">
-        <small v-if="!$v.event.location.required" class="error-message">Location is required</small>
+        <small v-if="!$v.event.location.required" class="error-message"
+          >Location is required</small
+        >
       </template>
       <h3>When is your event ?</h3>
       <div class="form-group" :class="{ error: $v.event.date.$error }">
@@ -61,7 +69,9 @@
           @closed="$v.event.date.$touch()"
         ></Datepicker>
         <template v-if="$v.event.date.$error">
-          <small v-if="!$v.event.date.required" class="error-message">Date is required</small>
+          <small v-if="!$v.event.date.required" class="error-message"
+            >Date is required</small
+          >
         </template>
       </div>
       <BaseSelect
@@ -73,9 +83,13 @@
         :class="{ error: $v.event.time.$error }"
       ></BaseSelect>
       <template v-if="$v.event.time.$error">
-        <small v-if="!$v.event.time.required" class="error-message">Time is required</small>
+        <small v-if="!$v.event.time.required" class="error-message"
+          >Time is required</small
+        >
       </template>
-      <BaseButton type="submit" class="block" :disabled="$v.$anyError">Submit</BaseButton>
+      <BaseButton type="submit" class="block" :disabled="$v.$anyError"
+        >Submit</BaseButton
+      >
     </form>
   </div>
 </template>
