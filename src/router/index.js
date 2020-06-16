@@ -20,6 +20,11 @@ const routes = [
     component: EventCreate
   },
   {
+    path: '/event/create',
+    name: 'event-create',
+    component: EventCreate
+  },
+  {
     path: '/event/:id',
     name: 'event-show',
     // route level code-splitting
